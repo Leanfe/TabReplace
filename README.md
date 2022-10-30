@@ -8,4 +8,6 @@ chmod +x build.sh
 ```
 
 ## Usage
+```
 TabReplace -h
+```
