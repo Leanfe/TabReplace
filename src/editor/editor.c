@@ -5,7 +5,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include "editor.h"
-#include "../reader/reader.h"
 
 char* deTab(const char* input_string, const int tab_replaces) {
     int len = strlen(input_string);
@@ -33,14 +32,6 @@ char* deTab(const char* input_string, const int tab_replaces) {
     output_string[j] = '\0';
 
     return output_string;
-}
-
-char** replaceTabs(FILE* input, int tab_replaces) {
-    char** arr = readFile(input);
-    for (int i = 0; arr[i]; i++) {
-        arr[i] = deTab(arr[i], tab_replaces);
-    }
-    return arr;
 }
 
 void replaceWithPush(FILE* in, FILE* output, int tab_replaces) {

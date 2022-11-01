@@ -9,15 +9,10 @@
 
 int main(int argc, char* argv[]) {
     int opt;
-    FILE* infile;
-    FILE* outfile;
+    FILE* infile = stdin;
+    FILE* outfile = stdout;
 
     int tab_spaces = 4;
-
-    if (argc < 2) {
-        printHelp();
-        return EXIT_SUCCESS;
-    }
 
     while((opt = getopt(argc, argv, ":f:o:t:h")) != -1) {
         switch(opt) {
